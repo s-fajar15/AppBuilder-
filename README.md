@@ -4,10 +4,6 @@
 
 *English: a lightweight IDE that builds Android projects (APK/AAB) on an Android ARM64 device using its own bundled toolchain.*
 
-<p>
-  <img src="docs/mockup.png" alt="Mockup App Builder" width="720">
-</p>
-
 ## Status
 
 | Area | Status |
