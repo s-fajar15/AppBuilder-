@@ -66,23 +66,6 @@ gradle wrapper --gradle-version 8.11.1   # sekali saja
 
 Hasil: `app/build/outputs/apk/debug/app-debug.apk`.
 
-Stack: Kotlin, Jetpack Compose (tanpa Material), AGP 8.9.1, Gradle 8.11.1. Font Google Sans dibundel di `app/src/main/res/font`; pastikan lisensinya sesuai sebelum mendistribusikan.
-
-## Struktur
-
-```
-app/src/main/java/dev/appbuilder/
-  MainActivity.kt      navigasi dan state utama
-  Screens.kt           proyek, pengaturan, navigasi
-  ProjectScreen.kt     editor, pohon file, hasil build
-  Editor.kt            editor kode, zoom, word wrap
-  BuildManager.kt      menjalankan Gradle, progres, notifikasi
-  Environment.kt       JDK, Gradle, SDK, unduhan, signing, diagnostik
-  BuildScreens.kt      layar build, SDK, konfigurasi, dependensi
-  Signing.kt           kunci rilis
-  Templates.kt         template project baru
-docs/                  PRD dan mockup
-```
 
 ## Keterbatasan yang perlu diketahui
 
@@ -91,16 +74,6 @@ docs/                  PRD dan mockup
 - **Satu JDK.** Belum ada pengelola beberapa versi JDK.
 - Persentase progres build adalah perkiraan; Gradle tidak mengetahui jumlah total tugasnya.
 - Unduhan dari tab SDK belum berjalan lewat service latar belakang; Android bisa menghentikannya saat app ditutup.
-
-## Pemecahan masalah
-
-| Gejala | Penyebab umum |
-|---|---|
-| `libz.so.1 not found` / `libandroid-shmem.so not found` | Library bawaan JDK build Termux. Gunakan **Run diagnostics**; paket hasil *Export package* membawa library ini sendiri. |
-| *Minimum supported Gradle version is X* | Pilih **Pakai Gradle X dan build ulang**, atau perbarui `gradle-wrapper.properties`. |
-| *licences have not been accepted* | Setujui lisensi lewat tombol **Review SDK license**. |
-| JDK ditolak ("glibc") | Itu JDK Linux desktop. Pakai build Android (bionic). |
-| Error Room/KSP di `kspDebugKotlin` | Sudah ditangani oleh environment; kirim log jika masih muncul. |
 
 ## Pengembang
 
