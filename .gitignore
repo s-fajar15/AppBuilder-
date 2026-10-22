@@ -1,0 +1,17 @@
+build/
+.gradle/
+local.properties
+*.apk
+
+# AppBuilder
+*.aab
+*.keystore
+*.jks
+.idea/
+captures/
+.externalNativeBuild/
+.cxx/
+*.iml
+.DS_Store
+.appbuilder*
+.appbuilder-logs/
